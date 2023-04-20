@@ -7,5 +7,5 @@
 
 ## Tài liệu tham khảo:
 - ReactJS: https://react.dev/
-- NextJS: https://next.giakho.vn/
+- NextJS: https://nextjs.org/
 - Styled Components: https://styled-components.com/
