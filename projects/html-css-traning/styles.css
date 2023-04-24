@@ -157,11 +157,11 @@ html {
   margin-left: 2rem;
 }
 
-.menu ul li{
+.brandTemplate ul li{
   margin-top: 10px;
 }
 
-.menu{
+.brand-item{
   width: 800px;
   height: 396px;
   background-color: #faeac0;
@@ -172,29 +172,18 @@ html {
   display: flex;
   gap: 8rem;
 }
-.phoneslist{
-  /* visibility: hidden;
-  opacity: 0;
-  transition: all 250ms;
-  display: none; */
-}
-
-.phoneslist.is-active {
-
-  visibility: visible;
-  opacity: 1;
-  display: flex;
-  z-index: 1;
-}
 
 
-.listmenu .title{
+
+
+
+.brand-item .brand-title{
   font-weight: bold;
   margin-left: 1rem;
 
 }
 
-.phoneslist .samgg{
+.brand-item{
   display: flex;
   flex-direction: column;
   gap: 5rem;
@@ -206,16 +195,5 @@ html {
 }
 
 
-.watcheslist{
-  visibility: hidden;
-  opacity: 0;
-  transition: all 250ms;
-  display: none;
-}
 
-.watcheslist.is-active {
-  visibility: visible;
-  opacity: 1;
-  display: flex;
-  z-index: 1;
-}
+

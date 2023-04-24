@@ -1,7 +1,9 @@
 const btnMenu = document.getElementById("btnMenu");
 const list = document.querySelector("#categoryList > ul");
-const phoneList = document.querySelector("#phoneList > ul");
+const brandlist = document.querySelector("#brandlist");
+const brandTemplate = document.querySelector("#brandTemplate");
 
+console.log("asdsad");
 let isActive = false;
 
 const data = {
@@ -739,10 +741,12 @@ function renderList(item) {
     // Tao element li
     const a = document.createElement("a");
     const li = document.createElement("li");
-    li.addEventListener('mouseenter', () => {
-  
-      renderItem(i)
-    })
+
+    //cai su kien khi hover
+    li.addEventListener("mouseenter", () => {
+      //hover den item nao se hien thi index cua cai do
+      renderItem(i);
+    });
 
     a.textContent = data.rows[i].name;
     //chen a vao li
@@ -753,35 +757,43 @@ function renderList(item) {
   }
 }
 
+function renderItem(index) {
+  brandList.innerHTML = "";
+  for (let i = 0; i < data.rows[index].brands.length; i++) {
+    const cloneBrandTemp = brandTemplate.cloneNode(true);
+    const brandTitle = cloneBrandTemp.content.querySelector(".brand-title");
+    const brands = cloneBrandTemp.content.querySelector(".brand-list");
+    brandTitle.textContent = data.rows[index].brands[i].name;
+    if (data.rows[index].brands[i].subCategories) {
+      for (
+        let j = 0;
+        j < data.rows[index].brands[i].subCategories.length;
+        j++
+      ) {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
 
-function renderItem(index){
-  console.log(data.rows[index])
+        a.textContent = data.rows[index].brands[i].subCategories[j].name;
+
+        li.appendChild(a);
+
+        brands.appendChild(li);
+      }
+    }
+    brandList.appendChild(cloneBrandTemp.content);
+  }
 }
-// function handleBtnMenu() {
-//   const categoryList = document.getElementById("categoryList");
-
-//   if (categoryList) {
-//     if (isActive) {
-//       categoryList.classList.remove("is-active");
-//       isActive = false;
-//     } else {
-//       categoryList.classList.add("is-active");
-//       isActive = true;
-//     }
-//   }
-// }
 
 function toggleMenu() {
   const categoryList = document.getElementById("categoryList");
   categoryList.classList.toggle("is-active");
-  isActive= !isActive
+  isActive = !isActive;
 }
 
 function main() {
   renderList();
   if (btnMenu) {
     btnMenu.addEventListener("click", toggleMenu);
-
   }
 }
 
