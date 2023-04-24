@@ -7,15 +7,16 @@
   box-sizing: border-box;
 }
 
-.html {
+html {
   font-family: "Roboto", sans-serif;
 }
 .container {
   width: 1200px;
   max-width: 100%;
   height: 40px;
-  margin: 0 auto;
 
+
+  margin-left: 5rem;
   display: flex;
   gap: 16px;
 }
@@ -105,4 +106,116 @@
 }
 
 
+.listmenu{
+  position: relative;
+  padding-left: 5rem;
+  display: flex;
+}
+.productslist{
+  visibility: hidden;
+  opacity: 0;
+  transition: all 250ms;
 
+}
+.productslist.is-active {
+  visibility: visible;
+  opacity: 1;
+}
+.productslist ul{
+  width: 200px;
+  height: fit-content;
+  background-color: #faeac0;
+
+  display: flex;
+  flex-direction: column;
+
+  list-style: none;
+  font-size: 14px;
+  border-radius: 5px;
+  border: #949191 solid 1px;
+ 
+}
+
+
+.productslist ul li{
+  padding: 10px 0 10px 1rem;
+  width: 100%;
+}
+
+.productslist ul li:hover{
+  background-color: #e6c36a;
+  transition: 0.5s;
+}
+
+.listmenu li{
+  list-style: none;
+}
+
+.listmenu a{
+  text-decoration: none;
+  color: #000;
+  margin-left: 2rem;
+}
+
+.menu ul li{
+  margin-top: 10px;
+}
+
+.menu{
+  width: 800px;
+  height: 396px;
+  background-color: #faeac0;
+  border-radius: 5px;
+  border: #949191 solid 1px;
+
+  
+  display: flex;
+  gap: 8rem;
+}
+.phoneslist{
+  /* visibility: hidden;
+  opacity: 0;
+  transition: all 250ms;
+  display: none; */
+}
+
+.phoneslist.is-active {
+
+  visibility: visible;
+  opacity: 1;
+  display: flex;
+  z-index: 1;
+}
+
+
+.listmenu .title{
+  font-weight: bold;
+  margin-left: 1rem;
+
+}
+
+.phoneslist .samgg{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.phoneslist .xiaoop{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+
+.watcheslist{
+  visibility: hidden;
+  opacity: 0;
+  transition: all 250ms;
+  display: none;
+}
+
+.watcheslist.is-active {
+  visibility: visible;
+  opacity: 1;
+  display: flex;
+  z-index: 1;
+}
