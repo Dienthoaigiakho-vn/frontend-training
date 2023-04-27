@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="popupAdd.css" />
   </head>
   <body>
     <main>
@@ -14,19 +15,55 @@
           <img src="" alt="#" class="blog-card--img" />
           <h3 class="blog-card--title"></h3>
           <p class="blog-card--desc"></p>
-          <div class="blog-card--info">by&nbsp;<b class="blog-card--author"></b>&nbsp; - &nbsp;<p class="blog-card--date"></p>
+          <div class="blog-card--info">
+            by&nbsp;<b class="blog-card--author"></b>&nbsp; - &nbsp;
+            <p class="blog-card--date"></p>
           </div>
         </a>
       </template>
       <section>
         <div class="container">
           <h1 class="blog-title">Blog</h1>
-          <button class="blog-btnAdd">Add post</button>
-          <div class="blog-list" id="blogList"></div>
+          <button class="blog-btnAdd" id="btnAddPost">Add post</button>
+          <div class="blog-list" id="blogList"></div> 
         </div>
       </section>
-    </main>
 
+      
+      <div class="popup-add">
+        <button class="btn-close"></button>
+        <h3 class="popup-title">Add post</h3>
+        <p class="popup-text">
+          Please enter the following information and submit then.
+        </p>
+        <form action="" class="form">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" />
+          </div>
+
+          <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" id="author" />
+          </div>
+
+          <div class="form-group">
+            <label for="desc">Description</label>
+            <input type="text" id="desc" />
+          </div>
+
+          <div class="form-group">
+            <label for="imagepost">Image</label>
+            <p>We're using <a href="#">Picsum service</a> to get a random image.</p>
+            <button class="btn-imagepostchange">Chang post image</button>
+            <img src="" alt="">
+          </div>
+        </form>
+
+        <button class="btn-popupsave"></button>
+      </div>
+    </main>
     <script type="module" src="/main.js"></script>
+    <script src="/popup.js"></script>
   </body>
 </html>
