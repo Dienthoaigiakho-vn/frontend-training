@@ -5,27 +5,28 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="container">
+    <main>
       <template id="blogTemplate">
         <a href="#" class="blog-card">
           <img src="" alt="#" class="blog-card--img" />
           <h3 class="blog-card--title"></h3>
           <p class="blog-card--desc"></p>
-          <p class="blog-card--date">
-            <b></b>
-          </p>
+          <div class="blog-card--info">by&nbsp;<b class="blog-card--author"></b>&nbsp; - &nbsp;<p class="blog-card--date"></p>
+          </div>
         </a>
       </template>
-
-      <section class="blog-section" id="blogSection">
-        
-
-
+      <section>
+        <div class="container">
+          <h1 class="blog-title">Blog</h1>
+          <button class="blog-btnAdd">Add post</button>
+          <div class="blog-list" id="blogList"></div>
+        </div>
       </section>
-    </div>
+    </main>
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>
