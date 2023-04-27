@@ -40,6 +40,8 @@ html {
   border-radius: 5px;
   font-size: 18px;
   font-weight: 500;
+  font-family: inherit;
+
 } 
 .container {
   width: 100%;
