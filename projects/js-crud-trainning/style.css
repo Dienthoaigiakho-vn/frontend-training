@@ -112,6 +112,7 @@ html {
 
 .blog-button {
   position: absolute;
+  z-index: 10;
   top: 12px;
   right: 10px;
   left: auto;
