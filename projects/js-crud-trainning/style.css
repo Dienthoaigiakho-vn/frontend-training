@@ -13,21 +13,20 @@ html {
   padding: 0 5px;
 }
 
-.blog{
+.blog {
   display: flex;
   flex-direction: column;
-
 }
 
-.blog-title{
+.blog-title {
   width: 100%;
   text-align: center;
   margin: 0 auto;
   font-size: 32px;
   font-weight: 700;
-} 
+}
 
-.blog-btnAdd{
+.blog-btnAdd {
   display: block;
   margin-left: auto;
   margin-bottom: 20px;
@@ -36,13 +35,14 @@ html {
   height: 40px;
 
   color: white;
-  background-color: #2AC44C;
+  background-color: #2ac44c;
   border-radius: 5px;
   font-size: 18px;
   font-weight: 500;
   font-family: inherit;
 
-} 
+  cursor: pointer;
+}
 .container {
   width: 100%;
   max-width: 1110px;
@@ -60,6 +60,7 @@ html {
 }
 
 .blog-card {
+  position: relative;
   overflow: hidden;
 
   display: flex;
@@ -94,7 +95,7 @@ html {
   font-size: 14px;
 }
 
-.blog-card--info{
+.blog-card--info {
   padding: 0 15px;
   display: flex;
 
@@ -104,10 +105,46 @@ html {
   font-size: 12px;
 }
 
-
 .blog-card--author {
   color: #444444;
   font-weight: 500;
+}
+
+.blog-button {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  left: auto;
+
+  display: flex;
+  gap: 10px;
+
+
+  opacity: 0.5;
+  cursor: pointers;
+}
+
+.btn-deleteBlog {
+  width: 48px;
+  height: 48px;
+
+  color: #000;
+
+
+  border-radius: 100%;
+}
+.btn-editBlog {
+  width: 48px;
+  height: 48px;
+
+  color: #000;
+
+  border-radius: 100%;
+}
+
+.btn-editBlog:hover,
+.btn-deleteBlog:hover{
+  color: #f28e31;
 }
 
 /*Tablet nhỏ(480 x 640)*/
@@ -116,7 +153,6 @@ html {
     --column-number: 2;
     --grid-gap: 10px;
   }
- 
 }
 /*Ipad dọc(768 x 1024)*/
 @media screen and (min-width: 768px) {
