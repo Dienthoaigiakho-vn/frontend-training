@@ -71,9 +71,21 @@ html {
   border: #cccccc solid 1px;
   border-radius: 5px;
 }
-.blog-card--img {
+.image-wrap{
   width: 100%;
   height: 200px;
+  overflow: hidden;
+
+}
+.blog-card:hover img{
+
+  transition: 0.5s;
+  transform: scale(1.2);
+}
+.blog-card--img {
+  width: 100%;
+  height: 100%;
+
   object-fit: cover;
 }
 
@@ -110,7 +122,7 @@ html {
   font-weight: 500;
 }
 
-.blog-button {
+.button-group {
   position: absolute;
   z-index: 10;
   top: 12px;
@@ -121,31 +133,34 @@ html {
   gap: 10px;
 
 
-  opacity: 0.5;
-  cursor: pointers;
 }
 
-.btn-deleteBlog {
+.btn-blog{
   width: 48px;
   height: 48px;
 
-  color: #000;
-
-
-  border-radius: 100%;
-}
-.btn-editBlog {
-  width: 48px;
-  height: 48px;
-
-  color: #000;
+  background-color: #D9D9D9;
 
   border-radius: 100%;
+  cursor: pointer;
+
+  transition: 0.5s;
+
 }
 
-.btn-editBlog:hover,
-.btn-deleteBlog:hover{
-  color: #f28e31;
+
+.btn-blog:hover{
+  background-color: #FFE1C6;
+
+
+}
+.btn-blog path{
+  stroke: #444444;
+  transition: 0.5s;
+}
+.btn-blog:hover path{
+
+  stroke: #F28E31;
 }
 
 /*Tablet nhỏ(480 x 640)*/
