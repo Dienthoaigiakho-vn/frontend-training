@@ -1,0 +1,13 @@
+
+.todo-item{
+  display: flex;
+  gap: 10px;
+
+  padding: 0 30px;
+
+  align-items: center;
+}
+.text-job{
+  flex-grow: 1;
+  font-size: 30px;
+}

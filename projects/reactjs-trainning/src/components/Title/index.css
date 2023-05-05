@@ -1,0 +1,7 @@
+h1{
+  margin-top: 3rem;
+
+  font-size: 50px;
+  text-align: center;
+  text-shadow: 0 0 10px var(--primary-color);
+}

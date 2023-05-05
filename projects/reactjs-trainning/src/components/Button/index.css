@@ -1,0 +1,19 @@
+button{
+  height: 56px;
+  width: 56px;
+  
+  font-size: 30px;
+  color: #ffff;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-primary{
+  background-color: var(--primary-color);
+  box-shadow:0 0 5px 4px #56f4ff9e ;  
+}
+
+.btn-secondary{
+  background-color: var(--secondary-color);
+  box-shadow:0 0 5px 4px #8d3f3f ;  
+}

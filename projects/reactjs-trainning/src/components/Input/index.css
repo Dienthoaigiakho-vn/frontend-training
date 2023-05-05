@@ -1,0 +1,19 @@
+.input-text{
+  padding: 12px 15px;
+  height: 56px;
+  flex-grow: 1;
+
+  background-color: #000000;
+  color: #ffff;
+  border: var(--primary-color) solid 1px;
+  border-radius: 5px;
+
+  box-shadow: 0 0 10px var(--primary-color);
+  font-size: 24px;
+}
+
+input::placeholder{
+  color: #ccc;
+
+  font-family: inherit;
+}

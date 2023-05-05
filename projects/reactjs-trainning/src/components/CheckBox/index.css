@@ -1,0 +1,9 @@
+.input-checkbox{
+  height: 30px;
+  width: 30px;
+
+  accent-color:var(--primary-color) ;
+  border-radius: 5px;
+
+  box-shadow: 0 0 10px  #fff
+}
