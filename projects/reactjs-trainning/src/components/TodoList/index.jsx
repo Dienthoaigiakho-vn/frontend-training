@@ -1,15 +1,11 @@
-import TodoItems from "./TodoItems"
+import TodoItem from "./TodoItem"
 import "./index.css"
-const TodoList = () => {
-  return (
-    <ul>
-      <TodoItems/>
-      <TodoItems/>
-      <TodoItems/>
-      <TodoItems/>
-      
-    </ul>
-  )
+
+const TodoList = ({ data }) => {
+  function renderItems(todo) {
+    return <TodoItem todo={todo} key={todo.id} />
+  }
+  return <ul>{data.map(renderItems)}</ul>
 }
 
 export default TodoList

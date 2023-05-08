@@ -1,8 +1,9 @@
 import "./index.css"
-const CheckBox = () => {
+const CheckBox = ({checked}) => {
   return (
-    <input className="input-checkbox" type="checkbox" />
+    
+    <input className="input-checkbox" type="checkbox" checked={checked} />
   )
 }
 
-export default CheckBox
+  export default CheckBox

@@ -11,3 +11,6 @@
   flex-grow: 1;
   font-size: 30px;
 }
+.text-job.is-done{
+  text-decoration: line-through;
+}
