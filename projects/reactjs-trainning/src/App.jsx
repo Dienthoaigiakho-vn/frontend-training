@@ -1,11 +1,12 @@
+import Test from "./components/Test";
 import Todo from "./components/Todo";
 
 function App() {
 
-  console.log("App Render");
   return (
     <>
-      <Todo />
+      {/* <Todo /> */}
+      <Test></Test>
     </>
   )
 }

@@ -7,11 +7,12 @@ const Input = ({ value, onInputChange}) => {
   }
 
   const inputRef = useRef(null)
+  
   useEffect(() => {
     inputRef.current.focus()
   }, []);
 
-
+  
   return (
     <input value={value} onChange={handleInputChange} className='input-text' placeholder='ENTER TASK' ref={inputRef} />
   )
