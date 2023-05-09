@@ -17,3 +17,8 @@ button{
   background-color: var(--secondary-color);
   box-shadow:0 0 5px 4px #8d3f3f ;  
 }
+
+.btn-third{
+  background-color: var(--third-color);
+  box-shadow:0 0 5px 4px #365c47 ;  
+}

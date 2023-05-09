@@ -5,7 +5,7 @@ import Input from "../Input"
 import { useState } from "react"
 import "./index.css"
 
-const TodoForm = ({ onAddTodo }) => {
+const TodoForm = ({ onAddTodo, handleEditTask }) => {
   const [value, setValue] = useState("")
 
 
@@ -28,7 +28,7 @@ const TodoForm = ({ onAddTodo }) => {
 
   }
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form className="form-todo" onSubmit={handleFormSubmit}>
       <Input
         value={value}
         onInputChange={(text) => {

@@ -14,3 +14,9 @@
 .text-job.is-done{
   text-decoration: line-through;
 }
+.form-edit{
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+

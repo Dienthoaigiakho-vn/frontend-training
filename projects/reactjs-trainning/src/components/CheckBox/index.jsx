@@ -1,9 +1,9 @@
 import "./index.css"
-const CheckBox = ({checked}) => {
+const CheckBox = ({ checked, onToggle }) => {
+
   return (
-    
-    <input className="input-checkbox" type="checkbox" checked={checked} />
+    <input onChange={() => onToggle()} className="input-checkbox" type="checkbox" checked={checked} />
   )
 }
 
-  export default CheckBox
+export default CheckBox

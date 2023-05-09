@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import './index.css'
 
-const Input = ({ value, onInputChange }) => {
+const Input = ({ value, onInputChange}) => {
   function handleInputChange(e) {
     onInputChange(e.target.value);
   }
@@ -10,6 +10,8 @@ const Input = ({ value, onInputChange }) => {
   useEffect(() => {
     inputRef.current.focus()
   }, []);
+
+
   return (
     <input value={value} onChange={handleInputChange} className='input-text' placeholder='ENTER TASK' ref={inputRef} />
   )
