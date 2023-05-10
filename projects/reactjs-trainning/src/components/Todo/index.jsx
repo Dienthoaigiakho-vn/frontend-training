@@ -1,16 +1,30 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Title from '../Title'
 import TodoForm from '../TodoForm'
 import TodoList from '../TodoList'
 import './index.css'
 
+const KEY = "todo-store"
 const Todo = () => {
   const [todoList, setTodoList] = useState([]);
+
+  useEffect(() => {
+    const data = localStorage.getItem(KEY);
+    if (data) {
+      const objectTodo = JSON.parse(data)
+      setTodoList(objectTodo)
+    }
+  }, [])
+
+  function updateStore(newTodoList) {
+    localStorage.setItem(KEY, JSON.stringify(newTodoList));
+  }
 
   function handleAddToDo(todo) {
     setTodoList((prevTodoList) => {
       const newTodoList = [...prevTodoList]
       newTodoList.push(todo)
+      updateStore(newTodoList)
       return newTodoList
     })
   }
@@ -36,16 +50,20 @@ const Todo = () => {
     ]
 
     setTodoList(newTodoList)
+
   }
 
   function handleRemoveTask(id, isDone) {
-    if(!isDone){
+    if (!isDone) {
       alert('Vui long hoan thanh cong viec truoc khi xoa')
       return
     }
-    setTodoList(todoList.filter((todo) => {
+    const newTodoList = todoList.filter((todo) => {
       return todo.id !== id
-    }))
+    })
+    setTodoList(newTodoList)
+    updateStore(newTodoList)
+
 
   }
   function handleEditTask(id, task) {
@@ -58,6 +76,10 @@ const Todo = () => {
     }
     const newTodo = todoList[index]
     newTodo.task = task
+
+    const newTodoList = todoList
+    updateStore(newTodoList)
+
   }
 
 
