@@ -31,7 +31,7 @@
     font-size: 20px;
   }
 }
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 530px) {
   .text-job{
     font-size: 15px;
   }
