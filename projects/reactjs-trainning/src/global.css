@@ -16,3 +16,18 @@ html {
 
   font-family: 'Roboto', sans-serif;
 }
+
+@media screen and (max-width: 800px) {
+  html{
+    margin: 0 20px;
+  }
+ 
+}
+@media screen and (max-width: 360px) {
+  html{
+    margin: 0 10px;
+  }
+}
+
+
+
