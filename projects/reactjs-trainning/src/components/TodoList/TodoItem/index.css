@@ -25,6 +25,13 @@
   width: 100%;
 
 }
+li{
+  border: #9b9999 solid 1px;
+  border-radius: 5px;
+  background-color: #020720;
+
+  cursor: move;
+}
 
 @media screen and (max-width: 800px) {
   .text-job{

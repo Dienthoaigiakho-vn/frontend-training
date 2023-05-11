@@ -5,11 +5,17 @@ import { MdOutlineDone } from 'react-icons/md'
 import CheckBox from '../../CheckBox'
 import "./index.css"
 import Input from '../../Input'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
-const TodoItem = ({ todo, onToggle, onRemove, onEdit }) => {
+const TodoItem = ({ data, todo, onToggle, onRemove, onEdit, onUpdate }) => {
   const [isEdit, setIsEdit] = useState(false)
   const [value, setValue] = useState(todo.task)
+  //luu index cua phan tu khi keo
+  const dragTodoID = ""
+  let dragTodoIndex = null
+  const dragOverTodoID = ""
+  let dragOverTodoIndex = null
+
   function handleEditTask() {
     setIsEdit(!isEdit)
   }
@@ -29,11 +35,33 @@ const TodoItem = ({ todo, onToggle, onRemove, onEdit }) => {
     onEdit(todo.id, value)
     setValue(value)
   }
+  //handle draggable
+  function handleGabble() {
 
-
-
+    const removedTodo = data.splice(dragTodoIndex, dragOverTodoIndex)[0];
+    data.splice(dragOverTodoIndex, 0, removedTodo);
+    console.log(dragTodoIndex, dragOverTodoIndex, removedTodo);
+    dragTodoIndex = null
+    dragOverTodoIndex = null
+  }
   return (
-    <li className='todo-item'>
+    <li className='todo-item'
+      draggable
+      onDragStart={() => { 
+        dragTodoID = todo.id
+        dragTodoIndex = data.findIndex((todo)=>{
+          return todo.id ===dragTodoID
+        })
+      }}
+      onDragEnter={() => { 
+        dragOverTodoID= todo.id
+         dragOverTodoIndex = data.findIndex((todo)=>{
+          return todo.id === dragOverTodoID
+        })
+        console.log(dragOverTodoIndex);
+      }}
+      onDragEnd={handleGabble}
+    >
       <CheckBox onToggle={() => onToggle(todo.id)} checked={todo.done} />
       {!isEdit &&
         <>
@@ -42,8 +70,8 @@ const TodoItem = ({ todo, onToggle, onRemove, onEdit }) => {
         </>}
       {isEdit &&
         <form className='form-edit' onSubmit={handleSubmit}>
-          <Input 
-          value={value}
+          <Input
+            value={value}
             onInputChange={(text) => { setValue(text) }}></Input>
           <Button type='submit' className="btn-third"><MdOutlineDone></MdOutlineDone></Button>
         </form>}

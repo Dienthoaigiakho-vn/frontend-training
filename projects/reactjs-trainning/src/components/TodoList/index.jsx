@@ -1,9 +1,17 @@
 import TodoItem from "./TodoItem"
 import "./index.css"
 
-const TodoList = ({ data , onToggle, onRemove, onEdit}) => {
+const TodoList = ({ data , onToggle, onRemove, onEdit, onUpdate}) => {
   function renderItems(todo) {
-    return <TodoItem todo={todo} key={todo.id} onToggle={onToggle} onRemove={onRemove} onEdit={onEdit} />
+    return <TodoItem 
+    data={data}
+    todo={todo} 
+    key={todo.id} 
+    onToggle={onToggle} 
+    onRemove={onRemove} 
+    onEdit={onEdit}
+    onUpdate={onUpdate}
+    />
   }
   return <ul>{data.map(renderItems)}</ul>
 }
