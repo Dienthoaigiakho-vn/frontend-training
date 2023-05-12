@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { Children } from 'react'
 import "./index.css"
-const Button = () => {
+const Button = ({children}) => {
   return (
-    <button></button>
+    <button>{children}</button>
   )
 }
 

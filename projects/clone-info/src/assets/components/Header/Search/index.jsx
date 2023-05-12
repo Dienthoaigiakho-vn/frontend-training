@@ -2,12 +2,16 @@ import React from 'react'
 import "./index.css"
 import Input from '../../compo/Input'
 import Button from '../../compo/Button'
+import { BsSearch } from "react-icons/bs"
 const Search = () => {
   return (
-    <form>
-      <Input></Input>
-      <Button></Button>
-    </form>
+
+    <div className="search-container">
+      <form className='form-search'>
+        <Input></Input>
+        <Button><BsSearch /></Button>
+      </form>
+    </div>
   )
 }
 
