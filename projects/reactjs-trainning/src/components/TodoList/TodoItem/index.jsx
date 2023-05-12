@@ -7,14 +7,10 @@ import "./index.css"
 import Input from '../../Input'
 import { useRef, useState } from 'react'
 
-const TodoItem = ({ data, todo, onToggle, onRemove, onEdit, onUpdate }) => {
+const TodoItem = ({ todo, onToggle, onRemove, onEdit, onTodoDragStart, onTodoDragEnter,onTodoDragEnd }) => {
   const [isEdit, setIsEdit] = useState(false)
   const [value, setValue] = useState(todo.task)
   //luu index cua phan tu khi keo
-  const dragTodoID = ""
-  let dragTodoIndex = null
-  const dragOverTodoID = ""
-  let dragOverTodoIndex = null
 
   function handleEditTask() {
     setIsEdit(!isEdit)
@@ -35,32 +31,16 @@ const TodoItem = ({ data, todo, onToggle, onRemove, onEdit, onUpdate }) => {
     onEdit(todo.id, value)
     setValue(value)
   }
-  //handle draggable
-  function handleGabble() {
 
-    const removedTodo = data.splice(dragTodoIndex, dragOverTodoIndex)[0];
-    data.splice(dragOverTodoIndex, 0, removedTodo);
-    console.log(dragTodoIndex, dragOverTodoIndex, removedTodo);
-    dragTodoIndex = null
-    dragOverTodoIndex = null
-  }
+
+  //handle draggable
   return (
     <li className='todo-item'
       draggable
-      onDragStart={() => { 
-        dragTodoID = todo.id
-        dragTodoIndex = data.findIndex((todo)=>{
-          return todo.id ===dragTodoID
-        })
-      }}
-      onDragEnter={() => { 
-        dragOverTodoID= todo.id
-         dragOverTodoIndex = data.findIndex((todo)=>{
-          return todo.id === dragOverTodoID
-        })
-        console.log(dragOverTodoIndex);
-      }}
-      onDragEnd={handleGabble}
+      onDragStart={()=>onTodoDragStart(todo.id)}
+      onDragEnter={()=>onTodoDragEnter(todo.id)}
+      onDragEnd={onTodoDragEnd}
+      onDragOver={(e)=>e.preventDefault()}
     >
       <CheckBox onToggle={() => onToggle(todo.id)} checked={todo.done} />
       {!isEdit &&

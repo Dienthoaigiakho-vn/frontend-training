@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Title from '../Title'
 import TodoForm from '../TodoForm'
 import TodoList from '../TodoList'
@@ -8,6 +8,8 @@ const KEY = "todo-store"
 const Todo = () => {
   const [todoList, setTodoList] = useState([]);
 
+  let dragTodoIndex = useRef(null)
+  let dragOverTodoIndex = useRef(null)
   useEffect(() => {
     const data = localStorage.getItem(KEY);
     if (data) {
@@ -29,9 +31,7 @@ const Todo = () => {
     })
   }
   function handleUpdateStatus(id) {
-    const index = todoList.findIndex((todo) => {
-      return todo.id === id
-    });
+    const index = todoList.findIndex((todo) => todo.id === id);
 
     if (index === -1) {
       console.log("Khong tim thay task")
@@ -67,9 +67,7 @@ const Todo = () => {
 
   }
   function handleEditTask(id, task) {
-    const index = todoList.findIndex((todo) => {
-      return todo.id === id
-    });
+    const index = todoList.findIndex((todo) => todo.id === id);
     if (index === -1) {
       console.log("Khong tim thay task")
       return
@@ -82,13 +80,44 @@ const Todo = () => {
 
   }
 
+  function handleTodoDragStart(id) {
+    dragTodoIndex = todoList.findIndex((todo) => todo.id === id)
+    if (dragTodoIndex === -1) {
+      return
+    }
+  }
+  function handleTodoDragEnter(id) {
+    dragOverTodoIndex = todoList.findIndex((todo) => todo.id === id)
+    if (dragOverTodoIndex === -1) {
+      return
+    }
+  }
+
+  function handleTodoDragEnd() {
+    const removedTodo = todoList.splice(dragTodoIndex, 1)[0]
+    todoList.splice(dragOverTodoIndex, 0, removedTodo)
+    updateStore(todoList);
+    setTodoList(todoList)
+    dragTodoIndex = null
+    dragOverTodoIndex = null
+
+    console.log(todoList);
+  }
 
 
   return (
     <div className='container'>
       <Title text="My Task List" />
       <TodoForm onAddTodo={handleAddToDo} />
-      <TodoList data={todoList} onToggle={handleUpdateStatus} onRemove={handleRemoveTask} onEdit={handleEditTask} />
+      <TodoList data={todoList}
+        onToggle={handleUpdateStatus}
+        onRemove={handleRemoveTask}
+        onEdit={handleEditTask}
+        onUpdate={updateStore}
+        onTodoDragStart={handleTodoDragStart}
+        onTodoDragEnter={handleTodoDragEnter}
+        onTodoDragEnd={handleTodoDragEnd}
+      />
 
     </div>
   )
