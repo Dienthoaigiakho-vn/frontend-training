@@ -9,6 +9,7 @@ const Header = () => {
     <div className="header-container">
       <Logo></Logo>
       <Search></Search>
+      <Service></Service>
     </div>
     </header>
   )

@@ -1,0 +1,17 @@
+.service-group{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+
+  align-items: center;
+  width: fit-content;
+  transition: 0.3s;
+}
+
+.service-group:hover{
+  color: #FF5701;
+}

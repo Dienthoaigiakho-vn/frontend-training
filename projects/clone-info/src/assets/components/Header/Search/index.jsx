@@ -1,8 +1,9 @@
 import React from 'react'
 import "./index.css"
-import Input from '../../compo/Input'
-import Button from '../../compo/Button'
+import Input from '../../Common/Input'
+import Button from '../../Common/SearchButton'
 import { BsSearch } from "react-icons/bs"
+
 const Search = () => {
   return (
 

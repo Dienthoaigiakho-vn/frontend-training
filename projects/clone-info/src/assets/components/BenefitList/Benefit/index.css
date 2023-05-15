@@ -1,0 +1,44 @@
+.benefit-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  width: 194px;
+  height: 100%;
+
+  border: 1px solid rgb(243, 241, 241);
+  border-radius: 5px;
+  font-size: 10px;
+  color: rgb(117, 117, 117);
+}
+
+.benefit-icon{
+  height: 70%;
+  width: auto;
+}
+
+.benefit-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.benefit-title {
+  margin-bottom: 2px;
+
+  color: rgb(48, 48, 48);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.benefit-title,
+.benefit-desc {
+  transition: 0.3s;
+
+}
+
+
+.benefit-container:hover .benefit-title,
+.benefit-container:hover .benefit-desc {
+  color: #eeb12d;
+}

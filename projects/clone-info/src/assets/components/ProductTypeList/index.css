@@ -1,0 +1,27 @@
+.productTypeList-container ul li{
+  list-style: none;
+}
+
+.productTypeList-container{
+  position: absolute;
+}
+
+.productTypeList-container ul{
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0%;
+
+  width: 200px;
+  height: 395px;
+
+  border-radius: 0.5rem;
+  border: 1px solid rgb(243, 243, 243);
+  background-color: white;
+}
+
+.productTypeList-container ul li{
+  flex: 1 1 0%;
+  padding-left: 20px;
+}

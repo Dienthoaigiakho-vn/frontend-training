@@ -1,0 +1,13 @@
+.productType-container {
+  display: flex;
+  gap: 7px;
+  height: 100%;
+  width: 100%;
+  
+  font-size: 15px;
+}
+
+.productType-icon {
+  width: 20px;
+  height: 20px;
+}

@@ -1,11 +1,11 @@
 import React from 'react'
 import "./index.css"
-const ServiceItem = () => {
+const ServiceItem = ({children, imgSrc}) => {
   return (
-    <>
-      <img src="" alt="" />
-      <span></span>
-    </>
+    <a className='service-group' >
+      <img className='service-Img' src={imgSrc} alt="" />
+      <span>{children}</span>
+    </a>
   )
 }
 

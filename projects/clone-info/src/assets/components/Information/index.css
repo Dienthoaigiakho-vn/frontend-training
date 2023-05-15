@@ -1,0 +1,12 @@
+.information-container{
+  width:  30%;
+  height: 500px;
+  background-color: #e1e1e1;
+}
+li{
+  list-style: none;
+}
+.group{
+  visibility: hidden;
+  opacity: 1;
+}
