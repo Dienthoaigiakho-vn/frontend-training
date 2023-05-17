@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { postApi } from "../../../api/postApi.mjs"
 import Content from "../Content"
 import Header from "../Header"
@@ -6,11 +6,15 @@ import Navbar from "../Navbar"
 import "./index.css"
 
 const WebInfo = () => {
+  const [pageList, setPageList] = useState([])
+
+  const parentPageList = pageList.filter((page) => page.parentId === null)
   useEffect(() => {
-    (async () =>{
+    (async () => {
       try {
         const res = await postApi.getAll()
-        hienthidata(res.data)
+        const pages = res.data.rows
+        setPageList(pages)
       } catch (error) {
         console.log(error);
       }
@@ -18,16 +22,15 @@ const WebInfo = () => {
   }, [])
 
 
-  function hienthidata(data) {
 
-  }
+
 
   return (
     <>
       <Header></Header>
       <main>
         <Navbar></Navbar>
-        <Content></Content>
+        <Content pageData={pageList} parentPageData={parentPageList}></Content>
       </main>
     </>
   )

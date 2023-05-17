@@ -3,7 +3,7 @@ import "./index.css"
 import ListingButton from '../Common/MenuButton'
 import BenefitList from '../BenefitList'
 
-const Navbar = () => {
+const Navbar = (pageData) => {
   return (
     <section className='navbar-section'>
         <ListingButton></ListingButton>

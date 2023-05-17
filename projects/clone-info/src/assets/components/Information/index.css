@@ -45,9 +45,9 @@
 
 /* handle hide menu */
 .title-list {
-  position: absolute;
-  visibility: hidden; 
-  opacity: 0  ;
+  position: relative;
+  visibility: visible; 
+  opacity:1  ;
 }
 
 
