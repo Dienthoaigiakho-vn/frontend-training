@@ -4,6 +4,7 @@ import Content from "../Content"
 import Header from "../Header"
 import Navbar from "../Navbar"
 import "./index.css"
+import Footer from "../Footer/index.jsx"
 
 const WebInfo = () => {
   const [pageList, setPageList] = useState([])
@@ -22,9 +23,6 @@ const WebInfo = () => {
   }, [])
 
 
-
-
-
   return (
     <>
       <Header></Header>
@@ -32,6 +30,7 @@ const WebInfo = () => {
         <Navbar></Navbar>
         <Content pageData={pageList} parentPageData={parentPageList}></Content>
       </main>
+      <Footer></Footer>
     </>
   )
 }

@@ -1,11 +1,12 @@
 import React from 'react'
 import "./index.css"
+import TopFooter from './TopFooter'
 
 const Footer = () => {
   return (
-    <div>
-      
-    </div>
+  <div className="footer-container">
+    <TopFooter></TopFooter>
+  </div>
   )
 }
 

@@ -3,7 +3,7 @@ import "./index.css"
 
 const Description = () => {
   return (
-    <div className='description-container'>
+    <div>
 
     </div>
   )

@@ -1,6 +1,6 @@
 .benefit-group{
   display: flex;
   gap: 10px;
-
   list-style: none;
+  width: 100%;
 }
