@@ -20,9 +20,7 @@
   color: #000;
 }
 
-.information__container ul {
-  list-style: none;
-}
+
 
 .information__list li {
   display: flex;

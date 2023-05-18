@@ -1,6 +1,26 @@
 .topFooter-container{
   max-width: 100%;
   width: 1200px;
+  margin: 0 auto;
 
   background-color: #ffff;
+}
+.topFooter-list{
+  display: flex;
+}
+.topFooter-title{
+  font-size: 14px;
+}
+.topFooter-information li,
+.topFooter-information a{
+  font-size: 12px;
+  color: #666666;
+  text-decoration: none;
+}
+.topFooter-informationImg{
+  display: flex;
+}
+.topFooter-informationImg img{
+  width: 40px;
+  height: 40px;
 }
