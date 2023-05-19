@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,700&display=swap");
+
 * {
   padding: 0;
   margin: 0;
@@ -10,6 +11,15 @@
 html {
   font-family: "Roboto", sans-serif;
 }
+
+li {
+  list-style: none;
+}
+
+:root {
+  --primary-color: #ffd600
+}
+
 .container {
   width: 1200px;
   max-width: 100%;
@@ -22,11 +32,12 @@ html {
 }
 
 .button {
-  width: 175px;
+  width: 170px;
   height: 100%;
   border-radius: 5px;
-  background-color: #23232b;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: #222222;
+  font-weight: bold;
   border: none;
 
   display: flex;
@@ -36,54 +47,62 @@ html {
 .btn-line {
   height: 2px;
   border-radius: 2px;
-  background-color: #fff;
+  background-color: #222222;
   width: 21px;
 }
 
-.btn-menubar{
+.btn-menubar {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding-left: 15px;
-  padding-right: 13px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-.btn-danhmuc span{
-  font-size: 16px;
-  margin-right: 17px;
+
+.btn-danhmuc span {
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-right: 13px;
 }
 
 .btn-arrowdown {
-  border-top: 5px solid white;
+  border-top: 5px solid #222222;
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
 }
 
 .navbar {
-  flex: 1px;
   display: flex;
+  flex: 1px;
   align-items: center;
-  gap: 16px;
-  padding: 0 10px;
 
   height: 100%;
   border-radius: 5px;
-  background-color: #faeac0;
+  background-color: var(--primary-color);
 }
 
 
-.navbar .title{
+.title {
+  padding-left: 25px;
+
+  width: fit-content;
+
   font-size: 16px;
   font-weight: bold;
 }
 
-.navbar ul{
+.list {
   display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+
   list-style: none;
   font-size: 14px;
 }
 
-.navbar ul li {
+.list li {
   display: flex;
+
   align-items: center;
 }
 
@@ -96,7 +115,7 @@ html {
   margin: 0 8px;
 }
 
-.nav-link{
+.nav-link {
   color: #0066FF;
   text-decoration: none;
 }
@@ -105,95 +124,98 @@ html {
   text-decoration: underline;
 }
 
-
-.listmenu{
+.listMenu {
   position: relative;
-  padding-left: 5rem;
+
   display: flex;
+  padding-left: 5rem;
 }
-.productslist{
-  visibility: hidden;
-  opacity: 0;
-  transition: all 250ms;
 
-}
-.productslist.is-active {
-  visibility: visible;
-  opacity: 1;
-}
-.productslist ul{
-  width: 200px;
-  height: fit-content;
-  background-color: #faeac0;
-
+.category-list {
   display: flex;
   flex-direction: column;
+
+  background-color: #fff;
 
   list-style: none;
   font-size: 14px;
   border-radius: 5px;
   border: #949191 solid 1px;
- 
+
+  visibility: hidden;
+  opacity: 0;
+  transition: all 250ms;
 }
 
-
-.productslist ul li{
-  padding: 10px 0 10px 1rem;
-  width: 100%;
+.category-list.is-active {
+  visibility: visible;
+  opacity: 1;
 }
 
-.productslist ul li:hover{
-  background-color: #e6c36a;
-  transition: 0.5s;
+.category-list li {
+  padding: 10px 55px;
 }
 
-.listmenu li{
-  list-style: none;
-}
-
-.listmenu a{
+.category-list a {
   text-decoration: none;
   color: #000;
-  margin-left: 2rem;
 }
 
-.brandTemplate ul li{
-  margin-top: 10px;
+.category-list li:hover {
+  background-color: var(--primary-color);
 }
 
-.brand-item{
-  width: 800px;
-  height: 396px;
-  background-color: #faeac0;
+.menu-brandList {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  flex-flow: row wrap;
+  
+  max-width: 100%;
+  width: 817px;
+  
+  background-color: #fff;
   border-radius: 5px;
   border: #949191 solid 1px;
 
-  
-  display: flex;
-  gap: 8rem;
+  /* visibility: hidden;
+  opacity: 0; */
 }
 
-
-
-
-
-.brand-item .brand-title{
-  font-weight: bold;
-  margin-left: 1rem;
-
+.menu-brandList.is-active {
+  /* visibility: visible;
+  opacity: 1; */
 }
 
-.brand-item{
+.brand-item {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
-}
-.phoneslist .xiaoop{
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+
+  width:calc(33% - 2rem);
 }
 
+.brand-title h3 {
+  color: #000000;
+  font-size: 13px;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out 0s
+}
 
+.brand-title h3:hover {
+  color: #EA5705;
+  text-decoration: underline;
+}
 
+.brand-list a {
+  padding: 0.5rem;
 
+  font-size: 13px;
+  color: #666666;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out 0s
+}
+
+.brand-list a:hover {
+  color: #EA5705;
+  text-decoration: underline;
+}

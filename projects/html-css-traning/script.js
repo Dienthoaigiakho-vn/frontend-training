@@ -1,9 +1,7 @@
-const btnMenu = document.getElementById("btnMenu");
-const list = document.querySelector("#categoryList > ul");
-const brandlist = document.querySelector("#brandlist");
+const btnMenu = document.querySelector("#btnMenu");
+const list = document.querySelector("#categoryList");
 const brandTemplate = document.querySelector("#brandTemplate");
-
-console.log("asdsad");
+const brandList = document.querySelector("#brandList")
 let isActive = false;
 
 const data = {
@@ -749,6 +747,9 @@ function renderList(item) {
     });
 
     a.textContent = data.rows[i].name;
+    a.addEventListener("click", (e) => {
+      a.setAttribute('href', data.rows[i].uri)
+    })
     //chen a vao li
     li.appendChild(a);
 
@@ -758,12 +759,19 @@ function renderList(item) {
 }
 
 function renderItem(index) {
+  // brandList.classList.add("is-active");
   brandList.innerHTML = "";
   for (let i = 0; i < data.rows[index].brands.length; i++) {
     const cloneBrandTemp = brandTemplate.cloneNode(true);
     const brandTitle = cloneBrandTemp.content.querySelector(".brand-title");
     const brands = cloneBrandTemp.content.querySelector(".brand-list");
-    brandTitle.textContent = data.rows[index].brands[i].name;
+    const h3 = document.createElement("h3")
+
+    h3.textContent = data.rows[index].brands[i].name;
+    brandTitle.appendChild(h3)
+    brandTitle.addEventListener("click", () => {
+      brandTitle.setAttribute('href', data.rows[index].brands[i].uri)
+    })
     if (data.rows[index].brands[i].subCategories) {
       for (
         let j = 0;
@@ -774,7 +782,9 @@ function renderItem(index) {
         const a = document.createElement("a");
 
         a.textContent = data.rows[index].brands[i].subCategories[j].name;
-
+        a.addEventListener("click", (e) => {
+          a.setAttribute('href', data.rows[index].brands[i].subCategories[j].uri)
+        })
         li.appendChild(a);
 
         brands.appendChild(li);
@@ -785,13 +795,14 @@ function renderItem(index) {
 }
 
 function toggleMenu() {
-  const categoryList = document.getElementById("categoryList");
+  const categoryList = document.querySelector("#categoryList");
   categoryList.classList.toggle("is-active");
   isActive = !isActive;
 }
 
 function main() {
   renderList();
+  console.log(btnMenu);
   if (btnMenu) {
     btnMenu.addEventListener("click", toggleMenu);
   }

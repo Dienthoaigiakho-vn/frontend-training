@@ -1,59 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
 
-    
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-    <div class="container">
-      <button id="btnMenu" class="button">
-        <div class="btn-menubar">
-          <div class="btn-line"></div>
-          <div class="btn-line"></div>
-          <div class="btn-line"></div>
-        </div>
+<body>
 
-        <div class="btn-danhmuc">
-          <span>Danh muc</span>
-        </div>
 
-        <div class="btn-arrowdown"></div>
-      </button>
 
-      <div class="navbar">
-        <p class="title">SAN PHAM HOT</p>
-        <ul class="list">
-          <li><a href="#" class="nav-link">IPHONE 14 PRO | 14 PRO MAX</a></li>
-          <li><a href="#" class="nav-link">IPHONE 14 | 14 PLUS</a></li>
-          <li><a href="#" class="nav-link">IPHONE 14 | 14 PLUS</a></li>
-          <li><a href="#" class="nav-link">IPHONE 14 | 14 PLUS</a></li>
-          <li><a href="#" class="nav-link">IPHONE 14 | 14 PLUS</a></li>
-        </ul>
+  <div class="container">
+    <button id="btnMenu" class="button">
+      <div class="btn-menubar">
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
       </div>
+
+      <div class="btn-danhmuc">
+        <span>Danh muc</span>
+      </div>
+
+      <div class="btn-arrowdown"></div>
+    </button>
+
+    <div class="navbar">
+      <p class="title">SAN PHAM HOT</p>
+      <ul class="list">
+        <li><a href="#" class="nav-link">IPHONE 14 PRO | 14 PRO MAX</a></li>
+        <li><a href="#" class="nav-link">IPHONE 14 | 14 PLUS</a></li>
+        <li><a href="#" class="nav-link">IPHONE 14 | 14 PLUS</a></li>
+        <li><a href="#" class="nav-link">IPHONE 14 | 14 PLUS</a></li>
+        <li><a href="#" class="nav-link">IPHONE 14 | 14 PLUS</a></li>
+      </ul>
     </div>
+  </div>
 
-    
-    <div class="listmenu">
-      <div class="productslist" id="categoryList">
-        <ul></ul>
+
+  <div class="listMenu">
+    <ul class="category-list" id="categoryList"></ul>
+    <template id="brandTemplate">
+      <div class="brand-item">
+        <a class="brand-title"></a>
+        <ul class="brand-list"></ul>
       </div>
+    </template>
+    <div class="menu-brandList" id="brandList"></div>
+  </div>
 
-      <template id="brandTemplate">
-        <div class="brand-item">
-          <h3 class="brand-title"></h3>
-          <ul class="brand-list"></ul>
-        </div>
-      </template>
-      
-      <div class="menu phoneslist" id="brandList"></div>
+  <script src="script.js"></script>
+</body>
 
-
-    <script src="script.js"></script>
-  </body>
 </html>
