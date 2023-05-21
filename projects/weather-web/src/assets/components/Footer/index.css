@@ -1,0 +1,27 @@
+.footer-container{
+  display: flex;
+  flex-direction: column;
+  
+  margin-top: 12px;
+  margin-left: 30px;
+  width: 94px;
+  height: 852px;
+
+  border-radius:  25px;
+  background-color: #202b3b;
+}
+
+.footer-profile{
+  margin: 40px auto 80px auto;
+
+  width: 50px;
+  height: fit-content;
+
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.footer-profile img{
+  width: 100%;
+}
