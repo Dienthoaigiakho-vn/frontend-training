@@ -3,10 +3,12 @@ import './index.css'
 import WeatherInfo from '../WeatherInfo'
 import WeatherForecast from '../WeatherForecast'
 
-const WeatherSection = ({location}) => {
+const WeatherSection = ({location, currentTemp}) => {
   return (
     <section className='weather-section'>
-      <WeatherInfo/>
+      <WeatherInfo
+      location={location}
+      currentTemp={currentTemp}/>
       <WeatherForecast/>
       
     </section>

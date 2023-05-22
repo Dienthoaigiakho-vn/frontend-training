@@ -19,14 +19,13 @@ const Main = () => {
       }
     })();
   }, [])
-  console.log(weather);
   //DANG LAM TOI DOAN NAY, LAY DATA TREN API VE NHUNG VAN DE LA DATA LAY KHONG KIP RENDER GAY RA LOI
   //TIM CACH GIAI QUYET
   return (
     <div className='main-container'>
       <div className="content-container">
         <SearchForm />
-        <WeatherSection/>
+        <WeatherSection location={weather.location.name} currentTemp={weather.location.temp_c}/>
         <AirConditionSection />
       </div>
     </div>

@@ -1,14 +1,14 @@
 import React from 'react'
 import './index.css'
 
-const WeatherInfo = () => {
+const WeatherInfo = ({location,currentTemp}) => {
   return (
     <section className='weatherInfo-section'>
       <div className="weatherInfo-left">
-        <h1>City</h1>
+        <h1>{location}</h1>
         <p>Chance of rain: rainRate %</p>
         
-        <h2>temp</h2>
+        <h2>{currentTemp}</h2>
       </div>
 
       <div className='weatherInfo-right'>
