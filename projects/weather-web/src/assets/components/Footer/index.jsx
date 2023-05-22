@@ -4,7 +4,7 @@ import './index.css'
 const Footer = () => {
   return (
     <div className='footer-container' >
-      <button className='footer-profile'><img src="src/assets/icons/Footer-ProfileIcon.png" alt="" /></button>
+      <button className='footer-btnProfile'><img src="src/assets/icons/Footer-ProfileIcon.png" alt="" /></button>
       <FooterSelection />
     </div>
   )

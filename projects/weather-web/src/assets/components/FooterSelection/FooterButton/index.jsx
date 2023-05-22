@@ -1,10 +1,10 @@
 import './index.css'
 
-const FooterButton = ({buttonTitle, imageSrc}) => {
-  
+const FooterButton = ({ buttonTitle, imageSrc, children }) => {
+
   return (
     <button className='footer-button' onClick={()=>{}}>
-      <img src={imageSrc} alt=""/>
+      {children}
       <span className='btn-title'>{buttonTitle}</span>
     </button>
   )

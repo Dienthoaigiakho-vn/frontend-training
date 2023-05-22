@@ -1,4 +1,4 @@
-.footer-button{
+.footer-button {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,20 +12,35 @@
   cursor: pointer;
 }
 
-.footer-button:hover,
-.footer-button:hover .btn-title{
-  border-radius: 15px;
-  background-color: #0b131ea8;
-  color: var(--font-color);
-}
-
-.footer-button img{
-  width: 40px;
+.footer-button svg {
+  width: 70px;
   margin-bottom: 10px;
+
 }
 
-.btn-title{
+.footer-button rect,
+.footer-button path {
+  fill: transparent;
+  stroke: var(--secondary-text-color);
+}
+
+.btn-title {
   font-size: 16px;
   font-weight: bold;
-  color: #0b131ed0;
+  color: var(--secondary-text-color);
+}
+
+.footer-button:hover {
+  border-radius: 15px;
+  background-color: #0b131ea8;
+}
+
+.footer-button:hover .btn-title {
+  color: var(--primary-text-color);
+}
+
+.footer-button:hover rect,
+.footer-button:hover path {
+  fill: transparent;
+  stroke: var(--primary-text-color);
 }

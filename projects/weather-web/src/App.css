@@ -4,10 +4,16 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
+li{
+  list-style: none;
+}
 
 :root {
   --primary-color: #0b131e;
-  --font-color: #9399a2
+  --secondary-color: #202b3b;
+  --primary-text-color: #e7e5e5;
+  --secondary-text-color: #8d939d;
+
 }
 
 html {

@@ -2,26 +2,29 @@
   display: flex;
   flex-direction: column;
   
-  margin-top: 12px;
-  margin-left: 30px;
   width: 94px;
-  height: 852px;
+  height: 100%;
 
   border-radius:  25px;
-  background-color: #202b3b;
+  background-color: var(--secondary-color);
 }
 
-.footer-profile{
-  margin: 40px auto 80px auto;
+.footer-btnProfile{
+  margin: 0 auto 50px auto;
 
-  width: 50px;
-  height: fit-content;
+  width: 100%;
+  height: 80px;
 
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
-.footer-profile img{
-  width: 100%;
+.footer-btnProfile img{
+  width: 50%;
+}
+
+.footer-btnProfile:hover {
+  border-radius: 15px;
+  background-color: #0b131ea8;
 }
