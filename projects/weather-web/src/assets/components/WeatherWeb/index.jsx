@@ -29,6 +29,10 @@ const WeatherWeb = () => {
           currentTemp={weather.current.temp_c}
           rainChance={weather.forecast.forecastday[0].day.daily_chance_of_rain}
           timeLineList={weather.forecast.forecastday[0].hour}
+          feelLikeC={weather.current.feelslike_c}
+          windKph={weather.current.wind_kph}
+          humidity={weather.current.humidity}
+          uvIndex={weather.current.uv}
         />
       </div>
     )

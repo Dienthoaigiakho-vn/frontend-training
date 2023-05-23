@@ -3,7 +3,7 @@ import './index.css'
 import TodayForecastItem from './TodayForecastItem'
 
 const TodayForecast = ({ timeLineList }) => {
-  const timeLine = timeLineList.filter((_, index) => index % 3 === 0);
+  const timeLine = timeLineList.filter((_, index) => index % 4 === 0);
   function renderTodayForecastItem(timeline) {
     return <TodayForecastItem
       timeLineTime={timeline.time_epoch}
