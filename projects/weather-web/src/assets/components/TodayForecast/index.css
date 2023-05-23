@@ -1,0 +1,28 @@
+.todayForecast-section {
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+  width: 100%;
+
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+}
+
+.todayForecast-title {
+  margin-bottom: 20px;
+
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--secondary-text-color);
+}
+
+.todayForecast-timeLine {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+
+  width: 90%;
+  justify-content: space-between;
+}

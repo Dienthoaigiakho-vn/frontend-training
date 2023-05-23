@@ -1,16 +1,18 @@
 import React from 'react'
 import './index.css'
 import WeatherInfo from '../WeatherInfo'
-import WeatherForecast from '../WeatherForecast'
+import TodayForecast from '../TodayForecast'
 
-const WeatherSection = ({location, currentTemp}) => {
+const WeatherSection = ({ location, currentTemp, rainChance, timeLineList }) => {
   return (
     <section className='weather-section'>
       <WeatherInfo
-      location={location}
-      currentTemp={currentTemp}/>
-      <WeatherForecast/>
-      
+        location={location}
+        currentTemp={currentTemp}
+        rainChance={rainChance} />
+      <TodayForecast
+        timeLineList={timeLineList}
+      />
     </section>
   )
 }

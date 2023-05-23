@@ -16,7 +16,6 @@
 .weatherInfo-left p {
   color: var(--secondary-text-color);
   font-size: 16px;
-  margin-bottom: 60px;
 }
 
 .weatherInfo-left h2 {
@@ -28,7 +27,7 @@
 
 .weatherInfo-right {
   right: 0;
-  width: 200px;
+  width: 170px;
 }
 
 .weatherInfo-right img {
