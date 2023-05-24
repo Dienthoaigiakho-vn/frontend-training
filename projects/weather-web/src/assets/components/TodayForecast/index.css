@@ -26,3 +26,8 @@
   width: 90%;
   justify-content: space-between;
 }
+
+.timeLine-item {
+  display: flex;
+  flex-direction: row;
+}

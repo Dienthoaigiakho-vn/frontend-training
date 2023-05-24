@@ -3,10 +3,10 @@ import './index.css'
 
 const Footer = () => {
   return (
-    <div className='footer-container' >
+    <section className='footer-container' >
       <button className='footer-btnProfile'><img src="src/assets/icons/Footer-ProfileIcon.png" alt="" /></button>
       <FooterSelection />
-    </div>
+    </section>
   )
 }
 

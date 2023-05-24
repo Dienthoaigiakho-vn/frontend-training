@@ -4,9 +4,9 @@ import WeatherSection from '../WeatherSection'
 import AirConditionSection from '../AirConditionSection'
 import './index.css'
 
-const Main = ({ location, currentTemp, rainChance, timeLineList, feelLikeC, windKph, humidity, uvIndex }) => {
+const Main = ({ location, currentTemp, rainChance, timeLineList, feelLikeC, windKph, humidity, uvIndex, visibilityKm, pressureHpa, sunsetTime }) => {
   return (
-    <div className='main-container'>
+    <section className='main-container'>
       <div className="content-container">
         <SearchForm />
         <WeatherSection location={location}
@@ -19,9 +19,13 @@ const Main = ({ location, currentTemp, rainChance, timeLineList, feelLikeC, wind
           windKph={windKph}
           humidity={humidity}
           uvIndex={uvIndex}
+          rainChance={rainChance}
+          visibilityKm={visibilityKm}
+          pressureHpa={pressureHpa}
+          sunsetTime={sunsetTime}
         />
       </div>
-    </div>
+    </section>
   )
 }
 

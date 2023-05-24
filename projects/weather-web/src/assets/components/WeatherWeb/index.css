@@ -1,7 +1,7 @@
 .weather-container {
   display: flex;
   gap: 25px;
-  margin: 50px auto;
+  margin: 20px auto;
 
   width: 1600px;
   height: 900px;

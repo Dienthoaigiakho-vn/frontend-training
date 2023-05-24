@@ -15,10 +15,7 @@
   margin: 0 8px;
 } */
 
-.timeLine-item{
-  display: flex;
-  flex-direction: row;
-}
+
 
 .timeLine-time{
   margin-bottom: 20px;

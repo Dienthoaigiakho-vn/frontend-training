@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react'
 import './index.css'
 import Footer from '../Footer'
 import Main from '../Main'
+import WeekForecast from '../WeekForecast/index.jsx'
+
 
 const WeatherWeb = () => {
   const [weather, setWeather] = useState([])
@@ -33,13 +35,19 @@ const WeatherWeb = () => {
           windKph={weather.current.wind_kph}
           humidity={weather.current.humidity}
           uvIndex={weather.current.uv}
+          visibilityKm={weather.current.vis_km}
+          pressureHpa={weather.current.pressure_mb}
+          sunsetTime={weather.forecast.forecastday[0].astro.sunset}
         />
+        {/* <WeekForecast
+          weekForecast={weather.forecast.forecastday}
+        /> */}
       </div>
     )
   } else {
     return (
       <div className='loading'>
-        <h1>KHONG ON ROI DAI VUONG OI</h1>
+        <h1>KHÔNG ỔN RỒI ĐẠI ZƯƠNG ƠI</h1>
       </div>
     )
   }

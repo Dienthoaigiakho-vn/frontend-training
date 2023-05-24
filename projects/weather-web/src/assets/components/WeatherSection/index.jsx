@@ -11,6 +11,7 @@ const WeatherSection = ({ location, currentTemp, rainChance, timeLineList }) => 
         currentTemp={currentTemp}
         rainChance={rainChance} />
       <TodayForecast
+        amountItem="6"
         timeLineList={timeLineList}
       />
     </section>
