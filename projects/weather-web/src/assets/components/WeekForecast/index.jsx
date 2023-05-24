@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './index.css'
 import WeekForecastItem from '../WeekInfoItem'
 import TodayForecast from '../TodayForecast'
-const WeekForecast = ({ weekForecast }) => {
+const WeekForecast = ({ weekForecast, timeLineList }) => {
   const [isShow, setIsShow] = useState(false)
 
   function renderWeekInfoItem(item) {
@@ -27,8 +27,11 @@ const WeekForecast = ({ weekForecast }) => {
         </ul>
         <button onMouseEnter={() => setIsShow(!isShow)} className='weekForecast-btnZoom'></button>
       </section>
-      <ul>
-        <TodayForecast/>
+      <ul className={`weekForecast-todayForecast ${isShow ? "is-Show" : ""}`} > 
+        <TodayForecast
+          amountItem="3"
+          timeLineList={timeLineList}
+        />
       </ul>
     </section>
   </>

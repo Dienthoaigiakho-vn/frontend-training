@@ -9,7 +9,7 @@
   bottom: 0;
 
   padding: 40px;
-  height: 60%;
+  height: 68%;
   width: 100%;
   background-color: var(--secondary-color);
 
@@ -56,4 +56,10 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+.weekForecast-todayForecast.is-Show{
+  visibility: hidden;
+  opacity: 0;
+  transition: 1.5s;
 }

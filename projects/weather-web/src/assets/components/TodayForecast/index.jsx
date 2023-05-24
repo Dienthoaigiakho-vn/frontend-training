@@ -3,7 +3,7 @@ import './index.css'
 import TodayForecastItem from './TodayForecastItem'
 
 const TodayForecast = ({ timeLineList, amountItem }) => {
-  const timeLine = timeLineList.filter((_, index) => index % (24 / amountItem) === 0); //xu li phan lay cot
+  const timeLine = timeLineList.filter((_, index) => index % (24 / amountItem) === 0);
   function renderTodayForecastItem(timeline) {
     return <li className='timeLine-item'>
       <TodayForecastItem

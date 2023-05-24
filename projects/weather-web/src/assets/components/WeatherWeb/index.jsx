@@ -39,9 +39,10 @@ const WeatherWeb = () => {
           pressureHpa={weather.current.pressure_mb}
           sunsetTime={weather.forecast.forecastday[0].astro.sunset}
         />
-        {/* <WeekForecast
+        <WeekForecast
           weekForecast={weather.forecast.forecastday}
-        /> */}
+          timeLineList={weather.forecast.forecastday[0].hour}
+        />
       </div>
     )
   } else {
