@@ -1,4 +1,4 @@
-import FooterSelection from '../FooterSelection'
+import FooterSelection from './FooterSelection'
 import './index.css'
 
 const Footer = ({setSection}) => {
