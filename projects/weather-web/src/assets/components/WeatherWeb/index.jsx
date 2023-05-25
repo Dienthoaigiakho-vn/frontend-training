@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import './index.css'
 import Footer from '../Footer'
 import Main from '../Main'
-import WeekForecast from '../WeekForecast/index.jsx'
+import Description from '../Decription/index.jsx'
 
 
 const WeatherWeb = () => {
@@ -40,6 +40,7 @@ const WeatherWeb = () => {
           location={weather.location.name}
           currentTemp={weather.current.temp_c}
           rainChance={weather.forecast.forecastday[0].day.daily_chance_of_rain}
+          currentIcon={weather.current.condition.icon}
           timeLineList={weather.forecast.forecastday[0].hour}
           feelLikeC={weather.current.feelslike_c}
           windKph={weather.current.wind_kph}
@@ -49,7 +50,7 @@ const WeatherWeb = () => {
           pressureHpa={weather.current.pressure_mb}
           sunsetTime={weather.forecast.forecastday[0].astro.sunset}
         />
-        <WeekForecast
+        <Description
           section={section}
           weekForecast={weather.forecast.forecastday}
           timeLineList={weather.forecast.forecastday[1].hour}

@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.css'
 
-const WeatherInfo = ({location,currentTemp, rainChance}) => {
+const WeatherInfo = ({ location, currentTemp, rainChance, currentIcon }) => {
   return (
     <section className='weatherInfo-section'>
       <div className="weatherInfo-left">
@@ -11,7 +11,7 @@ const WeatherInfo = ({location,currentTemp, rainChance}) => {
       </div>
 
       <div className='weatherInfo-right'>
-        <img src="//cdn.weatherapi.com/weather/64x64/day/116.png" alt="" />
+        <img src={currentIcon} alt="" />
       </div>
     </section>
   )

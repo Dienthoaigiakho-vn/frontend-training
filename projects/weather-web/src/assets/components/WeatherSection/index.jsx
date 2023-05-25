@@ -3,10 +3,11 @@ import './index.css'
 import WeatherInfo from '../WeatherInfo'
 import DayForecast from '../DayForecast'
 
-const WeatherSection = ({ location, currentTemp, rainChance, timeLineList, isShow }) => {
+const WeatherSection = ({ currentIcon, location, currentTemp, rainChance, timeLineList, isShow }) => {
   return (
     <section className="weather-section">
       <WeatherInfo
+        currentIcon={currentIcon}
         location={location}
         currentTemp={currentTemp}
         rainChance={rainChance} />
