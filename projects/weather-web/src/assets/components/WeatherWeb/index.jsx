@@ -9,10 +9,15 @@ import WeekForecast from '../WeekForecast/index.jsx'
 const WeatherWeb = () => {
   const [weather, setWeather] = useState([])
   const [isDone, setIsDone] = useState(false)
+  const [section, setSection] = useState("isCity")
+  const [locationSearch, setLocationSearch] = useState("ho chi minh")
+  // "&q=" + "Ho%20Chi%20Minh" + "&days=" + "7" +"&aqi=no&alerts=no"  
+  // https://api.weatherapi.com/v1/forecast.json?key=5f1c66d7092b4919bed72132232205&q=hanoi&days=7&aqi=no&alerts=no
+
   useEffect(() => {
     (async () => {
       try {
-        const res = await postApi.getAll()
+        const res = await postApi.getAll({ key: "5f1c66d7092b4919bed72132232205", q: locationSearch, days: 7, aqi: "no", alerts: "no" })
         const weather = res.data
         setWeather(weather)
         setIsDone(true)
@@ -21,13 +26,18 @@ const WeatherWeb = () => {
         setIsDone(false)
       }
     })();
-  }, [])
+  }, [locationSearch])
 
   if (isDone) {
     return (
       <div className='weather-container'>
-        <Footer />
-        <Main location={weather.location.name}
+        <Footer
+          setSection={setSection}
+        />
+        <Main
+          section={section}
+          setLocationSearch={setLocationSearch}
+          location={weather.location.name}
           currentTemp={weather.current.temp_c}
           rainChance={weather.forecast.forecastday[0].day.daily_chance_of_rain}
           timeLineList={weather.forecast.forecastday[0].hour}
@@ -40,8 +50,9 @@ const WeatherWeb = () => {
           sunsetTime={weather.forecast.forecastday[0].astro.sunset}
         />
         <WeekForecast
+          section={section}
           weekForecast={weather.forecast.forecastday}
-          timeLineList={weather.forecast.forecastday[0].hour}
+          timeLineList={weather.forecast.forecastday[1].hour}
         />
       </div>
     )

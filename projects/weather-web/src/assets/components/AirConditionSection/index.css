@@ -8,6 +8,12 @@
 
   background-color: var(--secondary-color);
   border-radius: 10px;
+  transition: width 0.75s;
+}
+.airCondition-section.is-Show{
+  width: 0;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .airCondition-title {
@@ -111,18 +117,17 @@
 
   opacity: 01;
   visibility: visible;
-  transition: height 0.5s;
+  transition: height 1s;
 
   overflow: hidden;
   height: 0; 
   width: 100%;
 
   background-color: var(--primary-color);
-  border-radius: 10px;
 }
 
 .airCondition-seeMore.is-show {
-  height: 68%;
+  height: 72%;
 
   opacity: 1;
   visibility: visible;

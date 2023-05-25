@@ -1,20 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SearchForm from '../SearchForm'
 import WeatherSection from '../WeatherSection'
 import AirConditionSection from '../AirConditionSection'
 import './index.css'
 
-const Main = ({ location, currentTemp, rainChance, timeLineList, feelLikeC, windKph, humidity, uvIndex, visibilityKm, pressureHpa, sunsetTime }) => {
+const Main = ({ section, setLocationSearch, location, currentTemp, rainChance, timeLineList, feelLikeC, windKph, humidity, uvIndex, visibilityKm, pressureHpa, sunsetTime }) => {
+  const [isShow, setIsShow] = useState(false)
+
   return (
-    <section className='main-container'>
-      <div className="content-container">
-        <SearchForm />
-        <WeatherSection location={location}
+    <section className={`main-container ${section}`}>
+      <SearchForm setLocationSearch={setLocationSearch} />
+      <section className="main-weatherSection">
+        <WeatherSection
+          isShow={isShow}
+          location={location}
           currentTemp={currentTemp}
           rainChance={rainChance}
           timeLineList={timeLineList}
         />
         <AirConditionSection
+          isShow={isShow}
+          setIsShow={setIsShow}
           feelLikeC={feelLikeC}
           windKph={windKph}
           humidity={humidity}
@@ -24,7 +30,7 @@ const Main = ({ location, currentTemp, rainChance, timeLineList, feelLikeC, wind
           pressureHpa={pressureHpa}
           sunsetTime={sunsetTime}
         />
-      </div>
+      </section>
     </section>
   )
 }

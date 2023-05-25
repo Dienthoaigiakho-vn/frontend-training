@@ -1,6 +1,14 @@
 .forecast-container {
   position: relative;
   flex-grow: 1;
+
+  visibility: hidden;
+  opacity: 0;
+  transition: 1s;
+}
+.forecast-container.isWeather{
+  visibility: visible;
+  opacity: 1;
 }
 
 .weekForecast-container {

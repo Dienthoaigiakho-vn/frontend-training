@@ -1,6 +1,6 @@
 import React from 'react'
 import './index.css'
-const TodayForecastItem = ({ timeLineTime, timeLineIcon, timeLineTemp }) => {
+const DayForecastItem = ({ timeLineTime, timeLineIcon, timeLineTemp }) => {
   const date = new Date(timeLineTime * 1000);
   return (
       <div className="timeLine-container">
@@ -11,4 +11,4 @@ const TodayForecastItem = ({ timeLineTime, timeLineIcon, timeLineTemp }) => {
   )
 }
 
-export default TodayForecastItem
+export default DayForecastItem

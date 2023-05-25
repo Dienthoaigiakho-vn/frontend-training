@@ -6,7 +6,7 @@ const WeekForecastItem = ({ dayForecast, conditionIcon, conditionText, maxTempC,
       <span className='weekInfo-day'>{dayForecast}</span>
       <img className='weekInfo-icon' src={conditionIcon} alt="" />
       <strong className='weekInfo-condition'>{conditionText}</strong>
-      <span className='weekInfo-minMAx'><strong>{maxTempC}</strong>/{minTempC}</span>
+      <span className='weekInfo-minMAx'><strong>{maxTempC}°C</strong>/{minTempC}°C</span>
     </li>
   )
 }

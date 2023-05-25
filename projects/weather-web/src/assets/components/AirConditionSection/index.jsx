@@ -2,11 +2,10 @@ import React, { useState } from 'react'
 import './index.css'
 import AirConditionItem from './AirConditionItem'
 
-const AirConditionSection = ({ feelLikeC, windKph, humidity, uvIndex, rainChance, visibilityKm, pressureHpa, sunsetTime }) => {
-  const [isShow, setIsShow] = useState(false)
+const AirConditionSection = ({ isShow, setIsShow, feelLikeC, windKph, humidity, uvIndex, rainChance, visibilityKm, pressureHpa, sunsetTime }) => {
   return (
     <>
-      <section className='airCondition-section'>
+      <section className={`airCondition-section ${isShow ? "is-Show" : ""}`}>
         <p className='airCondition-title'>Air conditions</p>
         <ul className='airCondition-info'>
 

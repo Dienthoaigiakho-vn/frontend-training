@@ -6,12 +6,24 @@
   height: 100%;
 }
 
-.content-container {
+.main-weatherSection {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 15px;
 
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  transition: 1s;
+  overflow: hidden;
+}
+
+.main-container.isWeather .main-weatherSection {
   width: 100%;
   height: 100%;
+
+  overflow: hidden;
+  visibility: visible;
+  opacity: 1;
 }

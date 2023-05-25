@@ -6,7 +6,12 @@
 
   background-color: var(--secondary-color);
   border-radius: 10px;
+  transition: width 0.75s;
 }
+.todayForecast-section.is-Show{
+  width: 40%;
+}
+
 
 .todayForecast-title {
   margin-bottom: 20px;

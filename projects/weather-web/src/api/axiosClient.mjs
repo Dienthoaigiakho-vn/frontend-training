@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 const axiosClient = axios.create({
-    baseURL: import.meta.env.VITE_BASE_URL + "/forecast.json?key=" + import.meta.env.VITE_BASE_KEY + "&q=" + "Ho%20Chi%20Minh" + "&days=" + "7" +"&aqi=no&alerts=no"
+    baseURL: import.meta.env.VITE_BASE_URL
   });
 
   axiosClient.interceptors.request.use(function (config) {
