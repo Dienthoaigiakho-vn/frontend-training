@@ -8,7 +8,7 @@ import Main from '../Main'
 const WeatherWeb = () => {
   const [weather, setWeather] = useState([])
   const [isDone, setIsDone] = useState(false)
-  const [section, setSection] = useState("isWeather")
+  const [section, setSection] = useState("isCity")
   const [locationSearch, setLocationSearch] = useState("ho chi minh")
   // "&q=" + "Ho%20Chi%20Minh" + "&days=" + "7" +"&aqi=no&alerts=no"  
   // https://api.weatherapi.com/v1/forecast.json?key=5f1c66d7092b4919bed72132232205&q=hanoi&days=7&aqi=no&alerts=no

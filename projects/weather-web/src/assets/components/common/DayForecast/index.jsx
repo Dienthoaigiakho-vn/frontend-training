@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import './index.css'
 import DayForecastItem from './DayForecastItem'
 
-const DayForecast = ({ timeLineList, amountItem, isShow, dayForecastTitle }) => {
+const DayForecast = ({ timeLineList, amountItem, dayForecastTitle }) => {
   const timeLine = timeLineList.filter((_, index) => index % (24 / amountItem) === 0);
   function renderDayForecastItem(timeline) {
     return <li className='timeLine-item'>
@@ -14,7 +14,7 @@ const DayForecast = ({ timeLineList, amountItem, isShow, dayForecastTitle }) => 
     </li>
   }
   return (
-    <div className={`todayForecast-container ${isShow ? "is-Show" : ""}`}>
+    <div className="todayForecast-container">
       <p className='todayForecast-title'>{dayForecastTitle} forecast</p>
       <ul className='todayForecast-timeLine'>{timeLine.map(renderDayForecastItem)}</ul>
     </div>

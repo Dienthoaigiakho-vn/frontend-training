@@ -5,10 +5,9 @@ import DayForecast from '../../../common/DayForecast'
 const DayForecastSection = ({ isShow, timeLineList }) => {
   return (
     <>
-      <section className='dayForecast-section'>
+      <section className={`dayForecast-section ${isShow ? "is-Show" : ""}`}>
         <DayForecast
           dayForecastTitle="Today's"
-          isShow={isShow}
           amountItem="12"
           timeLineList={timeLineList}
         />

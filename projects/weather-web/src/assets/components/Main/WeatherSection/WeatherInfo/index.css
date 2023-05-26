@@ -2,11 +2,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 30px 100px 30px 70px;
-}
-
-.weatherInfo-left {
-  position: relative;
+  align-items: center;
 }
 
 .weatherInfo-left h1 {
@@ -19,11 +15,10 @@
 .weatherInfo-left p {
   color: var(--secondary-text-color);
   font-size: 16px;
+  margin-bottom: 18px;
 }
 
 .weatherInfo-left h2 {
-  position: absolute;
-  bottom: 0;
   color: var(--primary-text-color);
   font-size: 64px;
 }

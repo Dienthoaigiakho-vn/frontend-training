@@ -5,6 +5,7 @@ import AirConditionSection from './WeatherSection/AirConditionSection'
 import './index.css'
 import DayForecastSection from './WeatherSection/DayForecastSection'
 import Description from './Description'
+import CitySection from './CitySection'
 
 const Main = ({ weekForecast, tomorrowTimeLineList, currentIcon, section, setLocationSearch, location, currentTemp, rainChance, todayTimeLineList, feelLikeC, windKph, humidity, uvIndex, visibilityKm, pressureHpa, sunsetTime }) => {
   const [isShow, setIsShow] = useState(false)
@@ -44,7 +45,19 @@ const Main = ({ weekForecast, tomorrowTimeLineList, currentIcon, section, setLoc
           />
         </div>
       </section>
-
+      <section className={`main-section ${section === "isCity" ? "showSection" : ""}`}>
+        <div className="content-container">
+          <SearchForm />
+          <CitySection />
+        </div>
+        <div className="description-container">
+          <WeatherSection
+            currentIcon={currentIcon}
+            location={location}
+            currentTemp={currentTemp}
+            rainChance={rainChance} />
+        </div>
+      </section>
     </section>
   )
 }

@@ -8,9 +8,7 @@
   transition: width 0.75s;
 }
 
-.todayForecast-container.is-Show {
-  width: 40%;
-}
+
 
 .todayForecast-title {
   margin-bottom: 20px;
