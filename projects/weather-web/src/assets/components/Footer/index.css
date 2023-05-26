@@ -1,15 +1,15 @@
-.footer-container{
+.footer-container {
   display: flex;
   flex-direction: column;
-  
+
   width: 94px;
   height: 100%;
 
-  border-radius:  25px;
+  border-radius: 25px;
   background-color: var(--secondary-color);
 }
 
-.footer-btnProfile{
+.footer-btnProfile {
   margin: 0 auto 50px auto;
 
   width: 100%;
@@ -20,7 +20,7 @@
   cursor: pointer;
 }
 
-.footer-btnProfile img{
+.footer-btnProfile img {
   width: 50%;
 }
 

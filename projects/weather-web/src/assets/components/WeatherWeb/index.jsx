@@ -3,13 +3,12 @@ import { useEffect, useState } from 'react'
 import './index.css'
 import Footer from '../Footer'
 import Main from '../Main'
-import Description from '../Decription/index.jsx'
 
 
 const WeatherWeb = () => {
   const [weather, setWeather] = useState([])
   const [isDone, setIsDone] = useState(false)
-  const [section, setSection] = useState("isCity")
+  const [section, setSection] = useState("isWeather")
   const [locationSearch, setLocationSearch] = useState("ho chi minh")
   // "&q=" + "Ho%20Chi%20Minh" + "&days=" + "7" +"&aqi=no&alerts=no"  
   // https://api.weatherapi.com/v1/forecast.json?key=5f1c66d7092b4919bed72132232205&q=hanoi&days=7&aqi=no&alerts=no
@@ -41,7 +40,7 @@ const WeatherWeb = () => {
           currentTemp={weather.current.temp_c}
           rainChance={weather.forecast.forecastday[0].day.daily_chance_of_rain}
           currentIcon={weather.current.condition.icon}
-          timeLineList={weather.forecast.forecastday[0].hour}
+          todayTimeLineList={weather.forecast.forecastday[0].hour}
           feelLikeC={weather.current.feelslike_c}
           windKph={weather.current.wind_kph}
           humidity={weather.current.humidity}
@@ -49,12 +48,10 @@ const WeatherWeb = () => {
           visibilityKm={weather.current.vis_km}
           pressureHpa={weather.current.pressure_mb}
           sunsetTime={weather.forecast.forecastday[0].astro.sunset}
-        />
-        <Description
-          section={section}
           weekForecast={weather.forecast.forecastday}
-          timeLineList={weather.forecast.forecastday[1].hour}
+          tomorrowTimeLineList={weather.forecast.forecastday[1].hour}
         />
+
       </div>
     )
   } else {
