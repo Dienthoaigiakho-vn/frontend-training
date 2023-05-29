@@ -23,6 +23,18 @@ const CitySection = () => {
     <li className='cityWeather-items'>
       <CityWeatherItem />
     </li>
+    
+    <li className='cityWeather-items'>
+      <CityWeatherItem />
+    </li>
+    
+    <li className='cityWeather-items'>
+      <CityWeatherItem />
+    </li>
+    
+    <li className='cityWeather-items'>
+      <CityWeatherItem />
+    </li>
 
   </ul>
   )

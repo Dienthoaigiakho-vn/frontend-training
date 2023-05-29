@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Children } from 'react'
 import './index.css'
 
-const AirConditionItem = ({ infoTitle, infoData, infoIcon }) => {
+const AirConditionItem = ({ infoTitle, infoData, children }) => {
   return (<>
     <div className='seeMore-infoTitle'>
-      <img className='seeMore-infoIcon' src={infoIcon} alt="" />
+      {children}
       <span className='seeMore-infoText'>{infoTitle}</span>
     </div>
     <span className='seeMore-infoData'>{infoData}</span>

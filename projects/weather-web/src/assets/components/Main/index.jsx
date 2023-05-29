@@ -11,7 +11,6 @@ import WeekForecast from '../common/WeekForecast'
 
 const Main = ({ weekForecast, tomorrowTimeLineList, currentIcon, section, setLocationSearch, location, currentTemp, rainChance, todayTimeLineList, feelLikeC, windKph, humidity, uvIndex, visibilityKm, pressureHpa, sunsetTime }) => {
   const [isShow, setIsShow] = useState(false)
-
   return (
     <section className="main-container">
       <section className={`main-section ${section === "isWeather" ? "showSection" : ""}`}>
@@ -64,7 +63,7 @@ const Main = ({ weekForecast, tomorrowTimeLineList, currentIcon, section, setLoc
             dayForecastTitle="Today's"
           />
           <WeekForecast
-            weekForecast= {weekForecast}
+            weekForecast={weekForecast}
             weekForecastTitle="3-day "
             amountDay="3"
           />

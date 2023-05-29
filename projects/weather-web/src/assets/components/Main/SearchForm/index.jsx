@@ -5,6 +5,7 @@ const SearchForm = ({ locationSearch, setLocationSearch }) => {
   const [inputValue, setInputValue] = useState(locationSearch);
   function handSubmitSearch(e) {
     e.preventDefault()
+    
     setLocationSearch(inputValue)
   }
   function handleChange(e) {

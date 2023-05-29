@@ -3,8 +3,7 @@ import './index.css'
 import WeekForecastItem from './WeekInfoItem'
 const WeekForecast = ({ weekForecast, weekForecastTitle, amountDay }) => {
   const [isShow, setIsShow] = useState(false)
-  weekForecast.splice(amountDay)
-
+  const amountDayOfWeek = weekForecast.slice(0, amountDay)
   function renderWeekInfoItem(item) {
     const itemDate = new Date(item.date_epoch * 1000)
     const currentDate = new Date().getDate()
@@ -23,7 +22,7 @@ const WeekForecast = ({ weekForecast, weekForecastTitle, amountDay }) => {
     <div className='weekForecast-container'>
       <p className='weekForecast-title'>{weekForecastTitle} Forecast</p>
       <ul className='weekForecast-weekInfo'>
-        {weekForecast.map(renderWeekInfoItem)}
+        {amountDayOfWeek.map(renderWeekInfoItem)}
       </ul>
       <button onMouseEnter={() => setIsShow(!isShow)} className='weekForecast-btnZoom'></button>
     </div>
