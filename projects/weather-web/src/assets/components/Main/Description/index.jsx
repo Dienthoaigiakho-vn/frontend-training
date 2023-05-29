@@ -9,7 +9,7 @@ const Description = ({weekForecast, timeLineList }) => {
     <section className={`weekForecast-section ${isShow ? "is-Show" : ""}`}>
       <WeekForecast
         amountDay="7"
-        weekForecastTitle="7-day forecast"
+        weekForecastTitle="7-day"
         weekForecast={weekForecast}
       />
       <button onMouseEnter={() => setIsShow(!isShow)} className='weekForecast-btnZoom'></button>

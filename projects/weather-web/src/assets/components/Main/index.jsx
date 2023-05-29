@@ -6,6 +6,8 @@ import './index.css'
 import DayForecastSection from './WeatherSection/DayForecastSection'
 import Description from './Description'
 import CitySection from './CitySection'
+import DayForecast from '../common/DayForecast'
+import WeekForecast from '../common/WeekForecast'
 
 const Main = ({ weekForecast, tomorrowTimeLineList, currentIcon, section, setLocationSearch, location, currentTemp, rainChance, todayTimeLineList, feelLikeC, windKph, humidity, uvIndex, visibilityKm, pressureHpa, sunsetTime }) => {
   const [isShow, setIsShow] = useState(false)
@@ -56,6 +58,16 @@ const Main = ({ weekForecast, tomorrowTimeLineList, currentIcon, section, setLoc
             location={location}
             currentTemp={currentTemp}
             rainChance={rainChance} />
+          <DayForecast
+            timeLineList={todayTimeLineList}
+            amountItem="3"
+            dayForecastTitle="Today's"
+          />
+          <WeekForecast
+            weekForecast= {weekForecast}
+            weekForecastTitle="3-day "
+            amountDay="3"
+          />
         </div>
       </section>
     </section>

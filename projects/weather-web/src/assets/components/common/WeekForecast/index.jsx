@@ -21,7 +21,7 @@ const WeekForecast = ({ weekForecast, weekForecastTitle, amountDay }) => {
   }
   return (<>
     <div className='weekForecast-container'>
-      <p className='weekForecast-title'>{weekForecastTitle}</p>
+      <p className='weekForecast-title'>{weekForecastTitle} Forecast</p>
       <ul className='weekForecast-weekInfo'>
         {weekForecast.map(renderWeekInfoItem)}
       </ul>
